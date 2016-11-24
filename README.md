@@ -43,7 +43,7 @@ If our hypothesis is true. We expect some changes in the above evaluation metric
 
 - Gross Conversion to go lower, as student who likely to cancel their enrollment during 14-day trial boundary expected to be decreased by the new pop screen
 - Retention would go higher, as enrolled students would not be likely to drop the course and pay at least one payment.
-- Net conversion expected to go lower as a result of the new screen.
+- Net conversion is expected to unchange. As the amount of students who past 14-day trial and make at least one payment shouldn't be affected by the change.
  
 ### Measuring Standard Deviation
 
@@ -159,8 +159,9 @@ A sample of 4,741,213 pageview is required to conduct the experiment.
 
 #### Duration vs. Exposure
 
-The exposure could be specified based on the risk & safety of the experiment. I beleive applying the experiment has a minimal risk on udacity users ( small popup window will be displayed to the user and can not block their usual interactions with udacity). Therefore, a 100% exposure is safe. Now, let's calculate the duration required to collect our sample data 4,741,213 pageviews. Given 40,000 pageview per day, with 100% exposure 119 day will be the duration of the experiment. I think, this is a long duration for a safe experiment. To reduce the duration, "Retention" metric can be exculded from evaluation metrices. This will reduce the total pages required to 685,275 pageview. With 100% exposurs, the duration will be 18 days which is a resonable duration to conduct the experiment. As a result our final evaluation metrices are "Net Conversion" and "Gross Conversion" metrices. 
+The exposure could be specified based on the risk & safety of the experiment. I believe applying the experiment has a minimal risk on Udacity users ( small popup window will be displayed to the user and cannot block their usual interactions with Udacity). The experiment doesn't include collecting any sensitive data about the user, also no one could be physically or emotionally harmed in anyway during the experiment. Therefore, a 100% exposure is safe. 
 
+Now, let's calculate the duration required to collect our sample data 4,741,213 pageviews. Given 40,000 pageview per day, with 100% exposure 119 day will be the duration of the experiment. I think, this is a long duration for a safe experiment. To reduce the duration, "Retention" metric can be excluded from evaluation metrics. This will reduce the total pages required to 685,275 pageview. With 100% exposures, the duration will be 18 days which is a reasonable duration to conduct the experiment. As a result, our final evaluation metrics are "Net Conversion" and "Gross Conversion" metrics. 
 
 ## Experiment Analysis
 ### Sanity Check
@@ -262,7 +263,7 @@ gc_p_pool = (X_cnt + X_exp) / (N_cnt + N_exp)
 gc_se_pool = math.sqrt((gc_p_pool*(1-gc_p_pool)*((1/N_cnt)+(1/N_exp))))
 gc_me = 1.96* gc_se_pool
 gc_d = (X_exp/N_exp) - (X_cnt/N_cnt)
-gc_CI = [gc_d - gc_se_pool, gc_d+gc_se_pool]
+gc_CI = [gc_d - gc_me, gc_d+gc_me]
 print "GrossConversion_P_Pool = ",gc_p_pool
 print "GrossConversion_Margin_of_Error = ", gc_me
 print "GrossConversion_Diff = ", gc_d
@@ -272,7 +273,7 @@ print "GrossConversion_CI = ",gc_CI
     GrossConversion_P_Pool =  0.208607067404
     GrossConversion_Margin_of_Error =  0.00856848375504
     GrossConversion_Diff =  -0.0205548745804
-    GrossConversion_CI =  [-0.0249265499655875, -0.01618319919513563]
+    GrossConversion_CI =  [-0.0291233583354044, -0.01198639082531873]
 
 
 *The condience interval does not include Zero, that means the metric is statisitcally significant. Also, It does not inculde dmin ( = (-)0.01) which means it is a practically significant.*
@@ -335,13 +336,16 @@ Udacity conducted an experiment to see the effect of studens knowing how much ti
 Evaluation metrics were chosen to evaluate the impact of the experiment, and see if it meets our expectations or not. Evaluation metrics were: "Gross Conversion" and "Net Conversion" rates. To statistically evaluate the metrics, the Null hypothesis is there is no change in evaluation metrics across control & experiment groups. To decide launching the experiment, we expect this Null hypothesis to be rejected for both metrics.
 
 The effect size test showed that Gross Conversion evaluation metric is statistically and practically significant. It also showed that Net Conversion metric is not statistically or practically significant. The Gross Conversion has been dropped by 2% in our experiment which approve the new screen has the expected impact in reducing students enrolled without having in front info about time they need to complete the course. But, for "Net Conversion" metric "Null hypothesis" was accepted and this is the opposite for what we expected.
-
 Both effect size tests and sign test approved that "Gross Conversion" metric is a practically and statistically significant, while "Net Conversion" is neither statistically or practically significant.
-The Bonferroni correction wasn't used in analysis as we have more than one evaluation metric. It would be appropriate to use it if our launching decision is based on a single metric.
+
+To launch our experiment ALL metrics - Gross conversion and Net conversion - should be satisfied and meet the required significance, that is the main reason of not using Bonferroni correction in our analysis. To use Bonferroni correction, Null hypothesis should not require the significance of ALL metrics and that is not the case in our experiment.
 
 
 ### Recommendation
-Our experiment goal was reducing the enrolled students who will not be committed to finish the course and as a result saving and improving the coaches’ support for enrolled students. The experiment showed a statistically and practically decrease in "Gross Conversion", while no significant change in "Net Conversion". This means decreasing enrolled students is not correlated with increasing students who will past 14-days trial and at least make one payment. My recommendation is not to launch this experiment.
+Our experiment goal can be divided into two main points:
+1- Reducing the enrolled students who will not be committed to finish the course.  
+2- Having no change or increase in the amount of students who past 14-days trial and make a payment.  
+The experiment showed a statistically and practically decrease in "Gross Conversion" which is aligned with the 1st point of experiment goal. But it also showed a decrease in "Net Conversion" which is the opposite of 2nd point in the experiment goal, so it is not aligned with the experiment goal. The amount of students who past 14-days trial and make a payment shouldn't be affected by the experiment. Based on these results, my recommendation is not to launch this experiment.
 
 ## Follow-Up Experiment
 
