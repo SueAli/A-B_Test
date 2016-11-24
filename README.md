@@ -342,9 +342,9 @@ To launch our experiment ALL metrics - Gross conversion and Net conversion - sho
 
 
 ### Recommendation
-Our experiment goal can be divided into two main points:
-1- Reducing the enrolled students who will not be committed to finish the course.  
-2- Having no change or increase in the amount of students who past 14-days trial and make a payment.  
+Our experiment goal can be divided into two main points: <br/>
+1- Reducing the enrolled students who will not be committed to finish the course.  <br/>
+2- Having no change or increase in the amount of students who past 14-days trial and make a payment.  <br/>
 The experiment showed a statistically and practically decrease in "Gross Conversion" which is aligned with the 1st point of experiment goal. But it also showed a decrease in "Net Conversion" which is the opposite of 2nd point in the experiment goal, so it is not aligned with the experiment goal. The amount of students who past 14-days trial and make a payment shouldn't be affected by the experiment. Based on these results, my recommendation is not to launch this experiment.
 
 ## Follow-Up Experiment
