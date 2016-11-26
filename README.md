@@ -42,7 +42,7 @@ B. **Evaluation metrics:** are metrics expected to change after as a result of c
 If our hypothesis is true, we must observe the following:
 - Gross Conversion should go lower, as student who likely to cancel their enrollment during 14-day trial boundary expected to be decreased by the new pop screen
 - Retention should go higher, as enrolled students would not be likely to drop the course and pay at least one payment.
-- Net conversion should remain unchanged. As the amount of students who past 14-day trial and make at least one payment shouldn't be affected by the change.
+- Net conversion shouldn't be reduced. As the amount of students who past 14-day trial and make at least one payment shouldn't be affected by the change.
  
  
 ### Measuring Standard Deviation
@@ -344,8 +344,8 @@ To launch our experiment ALL metrics - Gross conversion and Net conversion - sho
 ### Recommendation
 Our experiment goal can be divided into two main points: <br/>
 1- Reducing the enrolled students who will not be committed to finish the course.  <br/>
-2- Having no change in the amount of students who past 14-days trial and make a payment.  <br/>
-The experiment showed a statistically and practically significant in "Gross Conversion"- it has been dropped by 2% in our experiment -  which is aligned with the 1st point of experiment goal. But it also showed no significant in "Net Conversion" - the confidence interval includes the lower boundary (-0.0075) for practical significant - which is not aligned with the experiment 2nd goal. The amount of students who past 14-days trial and make a payment shouldn't be affected by the experiment. Based on these results, my recommendation is not to launch this experiment.
+2- Having no reduction in the amount of students who past 14-days trial and make a payment.  <br/>
+The experiment showed a statistically and practically significant in "Gross Conversion"- it has been dropped by 2% in our experiment -  which is aligned with the 1st point of experiment goal. But it also showed no significant in "Net Conversion" - the confidence interval includes the lower boundary (-0.0075) for practical significant - which is not aligned with the experiment 2nd goal. Based on these results, my recommendation is not to launch this experiment.
 
 ## Follow-Up Experiment
 
