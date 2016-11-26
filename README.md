@@ -39,11 +39,11 @@ B. **Evaluation metrics:** are metrics expected to change after as a result of c
 - Retention --> it reflect how users retention changed as a result of our experiment ( as it divides #of enrolled users who make at least one payment over # of user-ids to complete checkout). Note: some of users might cancel enrollment before they past the 14 day boundary ( those users will be counted in the denominator)
 - Net conversion --> it measures if the change has any effect on  overall 14-day completion rate. 
     
-If our hypothesis is true. We expect some changes in the above evaluation metrics:
-
-- Gross Conversion to go lower, as student who likely to cancel their enrollment during 14-day trial boundary expected to be decreased by the new pop screen
-- Retention would go higher, as enrolled students would not be likely to drop the course and pay at least one payment.
-- Net conversion is expected to unchange. As the amount of students who past 14-day trial and make at least one payment shouldn't be affected by the change.
+If our hypothesis is true, we must observe the following:
+- Gross Conversion should go lower, as student who likely to cancel their enrollment during 14-day trial boundary expected to be decreased by the new pop screen
+- Retention should go higher, as enrolled students would not be likely to drop the course and pay at least one payment.
+- Net conversion should remain unchanged. As the amount of students who past 14-day trial and make at least one payment shouldn't be affected by the change.
+ 
  
 ### Measuring Standard Deviation
 
@@ -344,8 +344,8 @@ To launch our experiment ALL metrics - Gross conversion and Net conversion - sho
 ### Recommendation
 Our experiment goal can be divided into two main points: <br/>
 1- Reducing the enrolled students who will not be committed to finish the course.  <br/>
-2- Having no change or increase in the amount of students who past 14-days trial and make a payment.  <br/>
-The experiment showed a statistically and practically decrease in "Gross Conversion" which is aligned with the 1st point of experiment goal. But it also showed a decrease in "Net Conversion" which is the opposite of 2nd point in the experiment goal, so it is not aligned with the experiment goal. The amount of students who past 14-days trial and make a payment shouldn't be affected by the experiment. Based on these results, my recommendation is not to launch this experiment.
+2- Having no change in the amount of students who past 14-days trial and make a payment.  <br/>
+The experiment showed a statistically and practically significant in "Gross Conversion"- it has been dropped by 2% in our experiment -  which is aligned with the 1st point of experiment goal. But it also showed no significant in "Net Conversion" - the confidence interval includes the lower boundary (-0.0075) for practical significant - which is not aligned with the experiment 2nd goal. The amount of students who past 14-days trial and make a payment shouldn't be affected by the experiment. Based on these results, my recommendation is not to launch this experiment.
 
 ## Follow-Up Experiment
 
